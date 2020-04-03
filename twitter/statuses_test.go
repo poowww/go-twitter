@@ -278,7 +278,7 @@ func TestStatusService_Retweeters(t *testing.T) {
 	httpClient, mux, server := testServer()
 	defer server.Close()
 
-	mux.HandleFunc("/1.1/statuses/retweeter/ids.json", func(w http.ResponseWriter, r *http.Request) {
+	mux.HandleFunc("/1.1/statuses/retweeters/ids.json", func(w http.ResponseWriter, r *http.Request) {
 		assertMethod(t, "GET", r)
 		assertQuery(t, map[string]string{"id": "10", "cursor": "11", "count": "100", "stringify_ids": "10"}, r)
 		w.Header().Set("Content-Type", "application/json")

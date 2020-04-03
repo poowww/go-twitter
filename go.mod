@@ -1,6 +1,6 @@
-module github.com/keaising/go-twitter
+module github.com/poowww/go-twitter
 
-go 1.12
+go 1.13
 
 require (
 	github.com/cenkalti/backoff v2.1.1+incompatible

@@ -332,6 +332,6 @@ type Retweeter struct {
 func (s *StatusService) Retweeters(params *StatusRetweeterParams) (*Retweeter, *http.Response, error) {
 	retweeters := new(Retweeter)
 	apiError := new(APIError)
-	resp, err := s.sling.Get("retweeters/ids.json").QueryStruct(params).Receive(retweeters, apiError)
+	resp, err := s.sling.New().Get("retweeters/ids.json").QueryStruct(params).Receive(retweeters, apiError)
 	return retweeters, resp, relevantError(err, *apiError)
 }
